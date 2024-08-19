@@ -56,11 +56,12 @@ export default function ProductCard () {
           <img className="img" src="https://http2.mlstatic.com/D_NQ_NP_951036-MLA47845059413_102021-O.webp" alt="" />
           <Box padding={1}>
             <Typography variant="subtitle1" component="h2">
-              Product Name
+              Creatine BSN 300g 
             </Typography>
           </Box>
+          <Divider flexItem />
           <Box>
-            <Typography variant="body2" component="p">
+            <Typography sx={{ paddingTop:'8px' }} variant="h5" component="p">
               Profit: $ 100.00
             </Typography>
           </Box>
@@ -103,6 +104,7 @@ export default function ProductCard () {
               <p>$21.19</p>
               <a href="">Link</a>
             </Box>
+
           </Box>
         </Box>
       </Paper>
