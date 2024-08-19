@@ -9,3 +9,9 @@
   height: auto;
   vertical-align: middle;
 }
+
+.divIcon{
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
