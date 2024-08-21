@@ -2,20 +2,16 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography  from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import  SvgIcon  from '@mui/material/SvgIcon';
 import amazon from '../assets/amazon.svg';
 import mercadoLibre from '../assets/mercadoLibre.svg';
 import Divider from '@mui/material/Divider';
-import { DataGrid } from '@mui/x-data-grid';
 
 
 export default function ProductCard () {
 
-  
-
   return (
-    <Grid item xs={4}>
-      <Paper elevation={1}>
+    <Grid item xs={2}>
+      <Paper elevation={1} sx={{borderRadius:4}}>
         <Box 
           sx={{
               display:"flex",

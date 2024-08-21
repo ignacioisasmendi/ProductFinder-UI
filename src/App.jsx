@@ -1,21 +1,34 @@
 import './App.css'
-import ProductCard from './components/ProductCard.jsx'
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import Home from './pages/Home'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-function App() {
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "-apple-system", 
+      "BlinkMacSystemFont", 
+      "sans-serif"
+    ].join(','),
+    fontWeightMedium: 500,
+  },
+  palette: {
+    primary: {
+      main: "#1975d2"
+    },
+    background: {
+      default: "#F6F8FA"
+    }
+  }
+});
+
+export default function App() {
   return (
-    <div>
-      <Container>
-        <Grid container spacing={5}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </Grid>
-      </Container>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Home></Home>
+    </ThemeProvider>
   )
-}
+} 
 
-export default App
+
