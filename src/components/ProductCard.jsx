@@ -11,7 +11,7 @@ export default function ProductCard () {
 
   return (
     <Grid item xs={2}>
-      <Paper elevation={1} sx={{borderRadius:4}}>
+      <Paper elevation={4} sx={{borderRadius:4}}>
         <Box 
           sx={{
               display:"flex",

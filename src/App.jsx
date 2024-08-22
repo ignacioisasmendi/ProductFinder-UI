@@ -14,10 +14,18 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#1975d2"
+      main: "#1975d2",
+      light: "#8EBDED",
     },
     background: {
-      default: "#F6F8FA"
+      default: "#F6F8FA",
+      light: "#f5f7f9"
+    },  
+    black: {
+      main: "#000000",
+    },
+    white: {
+      main: "#FFFFFF",
     }
   }
 });

@@ -1,8 +1,7 @@
 import ProductCard from '../components/ProductCard'
 import ProductTable from '../components/ProductTable';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import NavBar from '../components/Navbar';
+import SearchBar from '../components/SearchBar';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 
@@ -15,7 +14,7 @@ export default function Home () {
         <Typography variant='h2' align='center' color="primary">
           Product Finder
         </Typography>
-        <NavBar></NavBar> 
+        <SearchBar></SearchBar> 
         <ProductTable></ProductTable>
       </Box>
     </Container>
