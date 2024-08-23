@@ -1,11 +1,26 @@
 import ProductCard from './ProductCard'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductDetails from './ProductDetails';
 
 
 export default function ProductTable () {
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:5005/api/products/search');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    fetchData();
+}, []);
+
   return (
     <Box bgcolor={"#fff"} padding={3} borderRadius={4}
       sx={{

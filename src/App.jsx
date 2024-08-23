@@ -6,9 +6,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 const theme = createTheme({
   typography: {
     fontFamily: [
-      "-apple-system", 
-      "BlinkMacSystemFont", 
-      "sans-serif"
+      "PoppinsRegular",
+      "PoppinsSemiBold",
+      "PoppinsBold", 
     ].join(','),
     fontWeightMedium: 500,
   },

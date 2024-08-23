@@ -1,3 +1,19 @@
+@font-face {
+  font-family: PoppinsRegular;
+  src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: PoppinsBold;
+  src: url(assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: PoppinsSemiBold;
+  src: url(assets/fonts/Poppins-SemiBold.ttf);
+}
+
+
 :root {
   --primary: #1975d2;
   --grey-100: #F6F8FA;
@@ -5,4 +21,6 @@
   --white: #000000;
 }
 
-
+body {
+  font-family: "PoppinsRegular", sans-serif;
+}
