@@ -8,7 +8,7 @@ import bestBuy from '../assets/icons/bestBuy.svg';
 import Divider from '@mui/material/Divider';
 
 
-export default function ProductCard () {
+export default function ProductCard ({product}) {
 
   return (
     <Grid item xs={2}>
@@ -21,19 +21,19 @@ export default function ProductCard () {
               alignItems:"center",
           }}
         >
-          <img className="img" src="https://http2.mlstatic.com/D_NQ_NP_951036-MLA47845059413_102021-O.webp" alt="" />
+          <img className="img" src={product.imageURL} alt="" />
           <Box padding={1}>
             <Typography variant="h6" component="h6">
-              Creatine BSN 300g 
+              {product.brand} {product.model}
             </Typography>
           </Box>
           <Divider flexItem />
           <Box>
             <Typography sx={{ paddingTop:'8px' }} variant="subtitle1" component="p">
-              <strong>Profit:</strong> $ 100.00
+              <p><strong>Profit:</strong> ${product.profitUSD.toFixed(2)}</p> 
             </Typography>
             <Typography sx={{ paddingTop:'8px' }} variant="subtitle1" component="p">
-              <strong>Weight:</strong> 0.3 kg
+              <strong>Weight:</strong> {product.weight.toFixed(2)} kg
             </Typography>
           </Box>
           <Divider flexItem />
@@ -57,7 +57,7 @@ export default function ProductCard () {
               <div className='divIcon'>
                 <img className="icon" src={amazon} alt="amazon-icon" />
               </div>
-              <p>$21.19</p>
+              <p>${product.priceBB.toFixed(2)}</p>
               <a href="">Link</a>
             </Box>
             <Divider orientation="vertical" flexItem />
@@ -73,25 +73,25 @@ export default function ProductCard () {
               <div className='divIcon'>
                 <img className="icon" src={mercadoLibre} alt="ml-icon" />
               </div>
-              <p>$21.19</p>
+              <p>${product.priceML.toFixed(2)}</p>
               <a href="">Link</a>
             </Box>
             <Divider orientation="vertical" flexItem />
-            <Box
-              sx={{
-                display:"flex",
-                flexDirection:"column",
-                justifyContent:"center",
-                alignItems:"center",
-                width:1
-            }}  
-            >
-              <div className='divIcon'>
-                <img className="icon" src={bestBuy} alt="ml-icon" />
-              </div>
-              <p>$21.19</p>
-              <a href="">Link</a>
-            </Box>
+            {/*  <Box
+                sx={{
+                  display:"flex",
+                  flexDirection:"column",
+                  justifyContent:"center",
+                  alignItems:"center",
+                  width:1
+              }}  
+              >
+                <div className='divIcon'>
+                  <img className="icon" src={bestBuy} alt="ml-icon" />
+                </div>
+                <p>$21.19</p>
+                <a href="">Link</a>
+              </Box> */}
           </Box>
         </Box>
       </Paper>

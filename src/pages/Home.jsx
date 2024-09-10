@@ -4,8 +4,10 @@ import Container from '@mui/material/Container';
 import SearchBar from '../components/SearchBar';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
+import { useState } from 'react';
 
 export default function Home () {
+  const [results, setResults] = useState([]);
 
   return (
     <Container maxWidth='false'>
@@ -14,8 +16,8 @@ export default function Home () {
         <Typography variant='h2' align='center' color="primary">
           Product Finder
         </Typography>
-        <SearchBar></SearchBar> 
-        <ProductTable></ProductTable>
+        <SearchBar setResults={setResults} ></SearchBar> 
+        <ProductTable results={results}></ProductTable>
       </Box>
     </Container>
   );

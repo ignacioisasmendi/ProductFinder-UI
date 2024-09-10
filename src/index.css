@@ -24,3 +24,26 @@
 body {
   font-family: "PoppinsRegular", sans-serif;
 }
+
+.search-container{
+  width: 20%;
+}
+
+.search-input {
+  font-family: "PoppinsRegular", sans-serif;
+  border: none;
+  outline: none;
+  padding: 4px 0px;
+  position: relative;
+  background-color: transparent;
+}
+
+.underline{
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  background: rgba(73, 80, 87, 0.5);
+  transition: background-color 0.2s ease; 
+}
+
+

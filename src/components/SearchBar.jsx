@@ -1,13 +1,33 @@
 import { AppBar, Box} from '@mui/material';
 import SearchInput from '../shared/SearchInput/SearchInput.jsx';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
 import amazon from '../assets/icons/amazon.svg';
 import bestBuy from '../assets/icons/bestBuy.svg';
+import { useState } from 'react';
 
 
-export default function SearchBar () {
+
+export default function SearchBar ({setResults}) {
+  const [searchQuery, setSearchQuery] = useState(''); // State to hold input value
+
+  const handleInputChange = (event) => {    
+    setSearchQuery(event.target.value); 
+  };
+
+
+  const fetchData = async () => {
+      try {
+          console.log("fetching data....");
+          const response = await fetch(`http://localhost:5005/api/products/search?query=${searchQuery}`);
+          const data = await response.json();
+          setResults(data);
+      } catch (error) {
+          console.error('Error fetching data:', error);
+      }
+  };
+
+  
   return (
     <Box
       sx={{
@@ -22,7 +42,15 @@ export default function SearchBar () {
           paddingX:3,
           paddingY:2,
         }}>
-      <SearchInput></SearchInput>
+      <div className="search-container">
+        <input
+          className="search-input"
+          placeholder="Search"
+          value={searchQuery} // Controlled input value
+          onChange={handleInputChange} // Event handler to update state
+        />
+        <div className="underline"></div>
+      </div>
       <Box display={'flex'} gap={3}>
         <Box>
           <Checkbox defaultChecked />
@@ -33,6 +61,9 @@ export default function SearchBar () {
           <img className="icon" src={bestBuy} alt="mercadoLibre-icon" />
         </Box>
       </Box>
+      <Button variant="contained" color="primary" onClick={fetchData}>
+        Search
+      </Button>
     </Box>
   );
 }
