@@ -5,12 +5,12 @@ import Divider from '@mui/material/Divider';
 import React from 'react';
 
 
-export default function ProductDetails () {
+export default function ProductDetails ({details}) {
   return (
     <Box borderRadius={4} padding={2}  marginBottom={2} sx={{ bgcolor: 'black.main', boxShadow: 4 }}>
-      <Stack direction="row" justifyContent="center" spacing={2} divider={<Divider orientation="vertical" flexItem />}>
-        <Typography variant="body1" color="white.main"><strong>Products found:</strong> 140</Typography>
-        <Typography variant="body1" color="white.main"><strong>MercadoLibre products found:</strong> 650</Typography>
+      <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="center" spacing={{ xs: 0.5 , xl: 4 }}>
+        <Typography variant="body1" color="white.main"><strong>Products found:</strong> {details.productsFound}</Typography>
+        <Typography variant="body1" color="white.main"><strong>MercadoLibre products found:</strong> {details.productsFoundML}</Typography>
       </Stack>
     </Box>
   );

@@ -1,7 +1,7 @@
 .img{
-  width: 100%; /* This scales the image to fit the container's width */
-  max-width: 100px; /* Ensures the image won't be larger than 400px wide */
-  height: auto; /* Maintains aspect ratio */
+  /* width: 100px;  This scales the image to fit the container's width */
+  /* max-width: 100px;  Ensures the image won't be larger than 400px wide */
+  height: 100px; /* Maintains aspect ratio */
 }
 
 .icon{

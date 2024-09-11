@@ -32,6 +32,7 @@ export default function SearchBar ({setResults}) {
     <Box
       sx={{
           display: 'flex',
+          flexDirection: {xs: 'column', md: 'row'},
           justifyContent  : 'center',
           alignItems: 'center',
           backgroundColor:"#fff",
@@ -42,7 +43,9 @@ export default function SearchBar ({setResults}) {
           paddingX:3,
           paddingY:2,
         }}>
-      <div className="search-container">
+      <Box 
+        className="search-container"
+        width={{xs:'100%', md:'auto'}}>
         <input
           className="search-input"
           placeholder="Search"
@@ -50,7 +53,7 @@ export default function SearchBar ({setResults}) {
           onChange={handleInputChange} // Event handler to update state
         />
         <div className="underline"></div>
-      </div>
+      </Box>
       <Box display={'flex'} gap={3}>
         <Box>
           <Checkbox defaultChecked />
